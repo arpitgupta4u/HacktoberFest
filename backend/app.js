@@ -29,6 +29,9 @@ app.use('/api/v1', payment);
 
 // deployment
 __dirname = path.resolve();
+if(process.env.NODE_ENV=='non-preduction'){
+app.use(express.static(path.join(__name,'/frontend/index')))
+}
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '/frontend/build')))
 
