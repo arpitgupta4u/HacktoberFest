@@ -6,7 +6,7 @@ const fileUpload = require('express-fileupload');
 const errorMiddleware = require('./middlewares/error');
 
 const app = express();
-
+const kk = express();
 // config
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config({ path: 'backend/config/config.env' });
@@ -48,3 +48,4 @@ if (process.env.NODE_ENV === 'production') {
 app.use(errorMiddleware);
 
 module.exports = app;
+
